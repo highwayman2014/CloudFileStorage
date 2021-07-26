@@ -1,0 +1,113 @@
+.root
+{
+    -fx-background-color : #29283D;
+}
+
+.transparent
+{
+    -fx-background-color : transparent;
+}
+
+VBox
+{
+  -fx-background-color : #221D2D;
+}
+
+.rounded {
+  -fx-background-radius : 20px;
+}
+
+.table-view {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header-background .filler {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-text-background-color: #FFFFFF;
+}
+
+.table-view .column-header-background{
+    -fx-background-color: linear-gradient(to bottom, #282534, #221D2D);
+    -fx-background-radius: 7px 7px 0px 0px;
+    -fx-background-insets: 0 0 0 0;
+}
+
+.table-view .table-cell{
+    -fx-border-color: transparent;
+    -fx-padding: 2 0 2 10px;
+}
+
+.table-row-cell:filled:hover
+{
+    -fx-background-color: #45405A;
+}
+
+
+.table-row-cell: odd{
+    -fx-background-color: #282534;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+    -fx-text-background-color: #FFFFFF;
+}
+
+.table-row-cell: even{
+    -fx-background-color: #221D2D;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+    -fx-text-background-color: #FFFFFF;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #45405A;
+}
+.hyperlink, .hyperlink:pressed, .hyperlink:visited {
+  -fx-underline : false;
+  -fx-border-color : transparent;
+  -fx-border-width : 0px;
+  -fx-text-fill : #A2ABC4;
+}
+
+.button {
+    -fx-background-color: #282534;
+    -fx-text-fill : #FFFFFF;
+}
+
+.button:pressed {
+  -fx-background-color : derive(#282534, -40%), derive(#282534, -40%), #282534;
+}
+
+.field-path
+{
+  -fx-background-color : transparent;
+  -fx-text-fill : #FFFFFF;
+  -fx-border-color : transparent transparent #282534 transparent;
+  -fx-border-width : 0 0 1 0;
+}
+
+.search-field
+{
+  -fx-background-color : #282534;
+  -fx-text-fill : #FFFFFF;
+  -fx-border-width : 0 0 0 0;
+}
+
+.context-menu
+{
+    -fx-background-color : #282534;
+}
+
+.context-menu .menu-item:hover,
+.context-menu .menu-item:focused
+{
+    -fx-background-color : #221D2D;
+}
+
+.context-menu .menu-item .label
+{
+    -fx-text-fill : #FFFFFF;
+}
+

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.shepa.filestorage.client.ClientStageController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+    <VBox fx:id="signInPane" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" spacing="10.0" styleClass="rounded" StackPane.alignment="CENTER">
+        <Label fx:id="lblWelcome" alignment="CENTER" text="Welcome!" textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <TextField fx:id="loginField" maxWidth="-Infinity" prefWidth="200.0" promptText="Login" />
+        <TextField fx:id="passwordField" maxWidth="-Infinity" prefWidth="200.0" promptText="Password" />
+      <StackPane>
+          <Button fx:id="btnSignIn" onAction="#signIn" text="Sign in" />
+          <Button fx:id="btnSignUp" onAction="#signUp" text="Sign up" visible="false" />
+      </StackPane>
+      <StackPane>
+          <HBox fx:id="lblBottomSingIn" alignment="CENTER">
+              <Label alignment="CENTER" text="Not a member?" textFill="WHITE" />
+              <Hyperlink alignment="CENTER" onAction="#goToSingUp" text="Sign up" />
+          </HBox>
+          <HBox fx:id="lblBottomSingUp" alignment="CENTER" visible="false">
+              <Hyperlink alignment="CENTER" onAction="#goToSingIn" text="Back" />
+          </HBox>
+      </StackPane>
+        <Label fx:id="warningMsg" text="Warning" textFill="#ff7878" visible="false" />
+    </VBox>
+    <VBox fx:id="mainPane" styleClass="rounded" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <HBox VBox.vgrow="ALWAYS">
+            <VBox styleClass="transparent" HBox.hgrow="ALWAYS">
+                <HBox>
+               <TextField fx:id="clientSearch" promptText="Search..." HBox.hgrow="ALWAYS">
+                  <styleClass>
+                     <String fx:value="search-field" />
+                     <String fx:value="rounded" />
+                  </styleClass></TextField>
+                    <TextField fx:id="clientPath" editable="false" styleClass="field-path" HBox.hgrow="ALWAYS" />
+                    <Button onAction="#setClientPathUp" styleClass="rounded" text="Up">
+                  <HBox.margin>
+                     <Insets left="5.0" />
+                  </HBox.margin></Button>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="5.0" />
+               </padding>
+                </HBox>
+                <TableView fx:id="clientFilesList" onMouseClicked="#clientTableClick" VBox.vgrow="ALWAYS">
+                    <contextMenu>
+                        <ContextMenu fx:id="clientContextMenu" styleClass="rounded">
+                            <items>
+                                <MenuItem text="Add dir" onAction="#addDirOnClient" styleClass="rounded"/>
+                                <MenuItem text="Rename" onAction="#renameOnClient" styleClass="rounded"/>
+                                <MenuItem text="Remove" onAction="#removeOnClient" styleClass="rounded"/>
+                            </items>
+                        </ContextMenu>
+                    </contextMenu></TableView>
+            <HBox.margin>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </HBox.margin>
+            </VBox>
+         <StackPane>
+            <children>
+               <VBox maxHeight="-Infinity" prefHeight="100.0" spacing="5.0">
+                  <children>
+                     <Button focusTraversable="false" onAction="#copyToServer" styleClass="rounded" text="&gt;" />
+                     <Button focusTraversable="false" onAction="#copyFromServer" styleClass="rounded" text="&lt;" />
+                  </children>
+               </VBox>
+            </children>
+         </StackPane>
+            <VBox styleClass="transparent" HBox.hgrow="ALWAYS">
+                <HBox>
+               <TextField fx:id="serverSearch" promptText="Search...">
+                  <styleClass>
+                     <String fx:value="search-field" />
+                     <String fx:value="rounded" />
+                  </styleClass></TextField>
+                    <TextField fx:id="serverPath" editable="false" styleClass="field-path" HBox.hgrow="ALWAYS" />
+                    <Button onAction="#setServerPathUp" styleClass="rounded" text="Up">
+                  <HBox.margin>
+                     <Insets left="5.0" />
+                  </HBox.margin></Button>
+               <padding>
+                  <Insets bottom="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+                </HBox>
+                <TableView fx:id="serverFilesList" onMouseClicked="#serverTableClick" VBox.vgrow="ALWAYS">
+                    <contextMenu>
+                    <ContextMenu fx:id="serverContextMenu" styleClass="rounded">
+                    <items>
+                        <MenuItem text="Add dir" onAction="#addDirOnServer" styleClass="rounded"/>
+                        <MenuItem text="Rename" onAction="#renameOnServer" styleClass="rounded"/>
+                        <MenuItem text="Remove" onAction="#removeOnServer" styleClass="rounded"/>
+                    </items>
+                    </ContextMenu>
+                    </contextMenu></TableView>
+            <HBox.margin>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </HBox.margin>
+            </VBox>
+        </HBox>
+      <StackPane.margin>
+         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+      </StackPane.margin>
+    </VBox>
+</StackPane>
